@@ -1,5 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
-
 import { BrandLogo } from "./BrandLogo";
 import { brand } from "@/content/home";
 
@@ -14,15 +12,6 @@ export function Footer() {
             People. Processes. Progress. <span className="text-gradient font-semibold">Together.</span>
           </p>
         </div>
-        <a
-          href={brand.website}
-          target="_blank"
-          rel="noreferrer"
-          className="group inline-flex items-center gap-2 font-display text-2xl font-bold text-foreground md:text-3xl"
-        >
-          {brand.websiteLabel}
-          <ArrowUpRight className="size-6 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-        </a>
       </div>
       <div className="container-site border-t border-border py-6 text-sm text-muted-foreground">
         © {new Date().getFullYear()} {brand.name}. All rights reserved.
