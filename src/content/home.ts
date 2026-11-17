@@ -19,8 +19,6 @@ export const brand = {
   name: "DevOps Manager LLP",
   shortName: "DevOps Manager",
   tagline: "Modern Business Management Suite",
-  website: "https://themgr.in",
-  websiteLabel: "themgr.in",
 };
 
 export type NavItem = { label: string; href?: `#${string}`; soon?: boolean };
