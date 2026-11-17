@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Homepage is one route (`/`) composed of independent sections in `src/sections/*`; copy lives in `src/content/home.ts` so text edits never touch layout code.
+- Animation is CSS-first (`.reveal`, `.hero-enter`, `.draw-line` in `src/styles.css`) triggered by `useInView` adding `.is-in`; no GSAP/animation libraries, to keep the bundle light.
+- Generated 3D renders sit on white and use `.blend-on-white` (multiply) on the outermost transformed wrapper, because transforms isolate blending.
+- Nav items for unbuilt sections stay in `navItems` without `href` and render as "Soon" — never link to routes that don't exist.
