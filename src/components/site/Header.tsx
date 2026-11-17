@@ -14,7 +14,12 @@ export function Header() {
   const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+      // The short footer never reaches the spy band, so mark the last item at page end.
+      const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (atEnd) setActive(tracked[tracked.length - 1] ?? "home");
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
