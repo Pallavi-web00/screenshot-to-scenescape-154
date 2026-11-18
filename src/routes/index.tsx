@@ -4,6 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { About } from "@/sections/About";
+import { GlobalPresence } from "@/sections/GlobalPresence";
 import { Hero } from "@/sections/Hero";
 import { IntroAnimation } from "@/sections/IntroAnimation";
 import { WhyManager } from "@/sections/WhyManager";
@@ -40,6 +41,7 @@ function Index() {
       <main>
         <Hero ready={ready} />
         <About />
+        <GlobalPresence />
         <WhyManager />
       </main>
       <Footer />

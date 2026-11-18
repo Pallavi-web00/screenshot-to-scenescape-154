@@ -63,6 +63,36 @@ export const about = {
   modules: ["CRM", "ERP", "Workflows", "Analytics", "AI Engine", "Finance"],
 };
 
+export type LocationStatus = "operational" | "coming-soon";
+export type PresenceLocation = {
+  id: "dubai" | "mangalore" | "bangalore" | "california";
+  num: string;
+  name: string;
+  country: string;
+  status: LocationStatus;
+  statusLabel: string;
+  accent: "blue" | "purple" | "red" | "muted";
+  /** Approximate city/region coordinates for map placement — not office addresses. */
+  lat: number;
+  lon: number;
+};
+
+export const globalPresence = {
+  eyebrow: "Our Global Presence",
+  heading: { lead: "Connecting Businesses.", highlight: "Expanding Possibilities." },
+  body: "With a growing international presence, DevOps Manager LLP brings technology and business automation solutions closer to organizations across different markets.",
+  mapLabel: "World map showing DevOps Manager LLP locations",
+  legend: { operational: "Operational", comingSoon: "Coming soon" },
+  note: "Markers show approximate city and region locations.",
+  comingSoonMessage: "Expanding our reach",
+  locations: [
+    { id: "dubai", num: "01", name: "Dubai", country: "United Arab Emirates", status: "operational", statusLabel: "Operational Location", accent: "blue", lat: 25.2048, lon: 55.2708 },
+    { id: "mangalore", num: "02", name: "Mangalore", country: "India", status: "operational", statusLabel: "Operational Location", accent: "purple", lat: 12.9141, lon: 74.856 },
+    { id: "bangalore", num: "03", name: "Bangalore", country: "India", status: "operational", statusLabel: "Operational Location", accent: "red", lat: 12.9716, lon: 77.5946 },
+    { id: "california", num: "04", name: "California", country: "United States", status: "coming-soon", statusLabel: "Coming Soon", accent: "muted", lat: 36.7783, lon: -119.4179 },
+  ] satisfies PresenceLocation[],
+};
+
 export type Feature = {
   num: string;
   title: string;
