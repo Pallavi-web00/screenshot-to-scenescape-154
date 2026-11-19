@@ -1,15 +1,18 @@
 import { WORLD_DOT_ROWS } from "./world-dots";
 
-/** Map frame shared by the dot grid, arcs and markers. Must match scripts/generate-world-dots.py. */
-const LON0 = -168;
-const LON1 = 180;
-const LAT_TOP = 80;
-const LAT_BOTTOM = -56;
-const STEP = 6;
+/** Map frame shared by the dot grid, arcs and markers. scripts/generate-world-dots.ts imports these too. */
+export const LON0 = -168;
+export const LON1 = 180;
+export const LAT_TOP = 80;
+export const LAT_BOTTOM = -56;
+/** Spacing between land dots, in map units. */
+export const STEP = 6;
 export const MAP_WIDTH = 1000;
 
 const K = MAP_WIDTH / (((LON1 - LON0) * Math.PI) / 180);
-const miller = (lat: number) => 1.25 * Math.log(Math.tan(Math.PI / 4 + 0.4 * ((lat * Math.PI) / 180)));
+export const miller = (lat: number) =>
+  1.25 * Math.log(Math.tan(Math.PI / 4 + 0.4 * ((lat * Math.PI) / 180)));
+export const MAP_SCALE = K;
 const TOP = miller(LAT_TOP);
 export const MAP_HEIGHT = +((TOP - miller(LAT_BOTTOM)) * K).toFixed(2);
 
